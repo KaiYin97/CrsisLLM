@@ -2,9 +2,9 @@
 source code for fine-tuing LLama 3.1 for multi-task social media txt processing for Disaster Management. 
 # Introduction 
 This work is conducted based on our previous work: Crisissense-llm: [Instruction fine-tuned large language model for multi-label social media text classification in disaster informatics] (https://arxiv.org/abs/2406.15477).
-In this work, we fine-tune LLama 3.1-8B for multi-label text classification and NER for location identification of open-accessible disaster-related Twitter dataset. The fine-tuning is conducted through multi-turn Supervised-Fine-Tuning with each turn dealing with one specific task (event category classification, or humanitarian aid category classification, or location entities recognization). 
+For this work, I fine-tuned LLama 3.1-8B for multi-label text classification and NER for location identification of open-accessible disaster-related Twitter dataset. The fine-tuning is conducted through multi-turn Supervised-Fine-Tuning with each turn dealing with one specific task (event category classification, or humanitarian aid category classification, or location entities recognization). 
 # Prompt design
-Please refer to the official document of special tokens of LLama 3.1 in https://www.llama.com/docs/model-cards-and-prompt-formats/llama3_1/. This prompt design gains some experience from Llama Guard prompts design which is officially releaed in: https://github.com/meta-llama/llama-cookbook/blob/main/src/llama_recipes/datasets/toxicchat_dataset.py. One exmpple of the prompt for fine-tuning is shown as follows.
+Please refer to the official document of special tokens of LLama 3.1 in https://www.llama.com/docs/model-cards-and-prompt-formats/llama3_1/. This prompt design gains some experience from [Llama Guard] (https://www.llama.com/docs/model-cards-and-prompt-formats/llama-guard-3/) prompts design which is officially releaed in: https://github.com/meta-llama/llama-cookbook/blob/main/src/llama_recipes/datasets/toxicchat_dataset.py. One exmpple of the prompt for fine-tuning is shown as follows.
 
 <|begin_of_text|><|start_header_id|>system<|end_header_id|>
 
