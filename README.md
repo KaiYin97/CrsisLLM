@@ -1,5 +1,5 @@
 # CrsisLLM
-source code for fine-tuing LLama 3.1 for multi-task social media txt processing for Disaster Management. 
+source code for fine-tuing LLama 3.1 for multi-task social media txt processing for Disaster Management. Instruction fine-tuned large language model for multi-label social media text classification in disaster informatics
 # Introduction 
 This work is conducted based on our previous work: Crisissense-llm: [Instruction fine-tuned large language model for multi-label social media text classification in disaster informatics](https://arxiv.org/abs/2406.15477).
 For this work, I fine-tuned LLama 3.1-8B for multi-label text classification and NER for location identification of open-accessible disaster-related Twitter dataset. The fine-tuning is conducted through multi-turn Supervised-Fine-Tuning with each turn dealing with one specific task (event category classification, or humanitarian aid category classification, or location entities recognization). 
@@ -118,8 +118,8 @@ You should provide your response in JSON format, with the following structure: {
 The training and inference data is originated from IDRISI https://github.com/rsuwaileh/IDRISI which contains human labeled location, human aid information. I did some post-processing to make it more suitable for the current work. 
 All training data is in /data/dialog.json, while inference data is in dialog4inference_train_part.json.
 # Training 
-The training code is in /code/train.py which uses Deepspeed-zero-stage-3 in 4 A-100-40Gb GPUs with mixed precision training. Full parameter tuning and LORA fine tuning are considered. 
-Please refer to /code/configs for configuration of details of the training hyperparameter. 
+The training code is in /code/train.py which uses Deepspeed-zero-stage-3 in A-100-40Gb GPUs with mixed precision training. Full parameter tuning and LORA fine tuning are considered. 
+Please refer to /code/configs for configuration details of the training hyperparameter. 
 # Inference 
 For inference, please refer to /code/inference.py
 # Instruction
