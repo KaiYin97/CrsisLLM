@@ -122,6 +122,8 @@ The training code is in /code/train.py which uses Deepspeed-zero-stage-3 in 4 A-
 Please refer to /code/configs for configuration of details of the training hyperparameter. 
 # Inference 
 For inference, please refer to /code/inference.py
+# Instruction
+You can use run_deepspeed.sh for training 
 # Citation
 If you find this repository helpful, please consider citing:
 @article{yin2024crisissense,
