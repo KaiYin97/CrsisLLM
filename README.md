@@ -115,9 +115,22 @@ You should provide your response in JSON format, with the following structure: {
 {"human_aid": "yyy"}<|eot_id|>
 
 # Traning and inference data 
+The training and inference data is originated from IDRISI https://github.com/rsuwaileh/IDRISI which contains human labeled location, human aid information. I did some post-processing to make it more suitable for the current work. 
 All training data is in /data/dialog.json, while inference data is in dialog4inference_train_part.json.
 # Training 
-The training code is in /code/train.py which uses Deepspeed-zero-stage-3. I considered full parameter tuning and LORA fine tuning. 
-Please refer to /code/configs for configuration of training settings. 
+The training code is in /code/train.py which uses Deepspeed-zero-stage-3 in 4 A-100-40Gb GPUs with mixed precision training. Full parameter tuning and LORA fine tuning are considered. 
+Please refer to /code/configs for configuration of details of the training hyperparameter. 
 # Inference 
 For inference, please refer to /code/inference.py
+# Citation
+If you find this repository helpful, please consider citing:
+@article{yin2024crisissense,
+    title = "{Crisissense-LLM: Instruction Fine-tuned Large Language Model for Multi-label Social Media Text Classification in Disaster Informatics}",
+    author = "Yin, Kai and Liu, Chang and Mostafavi, Amir and Hu, Xiao",
+    journal = "arXiv preprint arXiv:2406.15477",
+    year = "2024",
+    month = "jun",
+    url = "https://arxiv.org/abs/2406.15477",
+    abstract = "This paper presents Crisissense-LLM, an instruction fine-tuned large language model for multi-label social media text classification in disaster informatics. The model demonstrates the capability to handle various disaster-related tasks such as event categorization, humanitarian aid classification, and named entity recognition using multi-turn supervised fine-tuning techniques.",
+}
+
