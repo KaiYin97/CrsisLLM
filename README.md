@@ -68,9 +68,8 @@ You should provide your response in JSON format, with the following structure: {
 ## Traning and inference data 
 The training and inference data is originated from IDRISI https://github.com/rsuwaileh/IDRISI which contains human labeled location, human aid information. I did some post-processing to make it more suitable for the current work. 
 All training data is in /data/dialog.json, while inference data is in dialog4inference_train_part.json.
-## Training 
-The training code is in /code/train.py which uses Deepspeed-zero-stage-3 in A-100-40Gb GPUs with mixed precision training. Full parameter tuning and LORA fine tuning are considered. 
-Please refer to /code/configs for configuration details of the training hyperparameter. 
+## Training setting 
+The training code is in /code/train.py. This project uses Deepspeed-zero-stage-3 in A-100-40Gb GPUs with mixed precision training to accelerate training. Both full parameter tuning and LORA fine tuning are considered. Different hyperparameter combinations of LORA fine-tuning are considered. You could also consider other PEFTs (such as QLORA, etc.) based on my current training code. Please refer to /code/configs for configuration details of the training hyperparameter. 
 ## Inference 
 For inference, please refer to /code/inference.py
 ## Instruction
