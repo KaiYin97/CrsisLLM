@@ -31,7 +31,7 @@ S5: floods
 <BEGIN EVENT CATEGORIES DESCRIPTION>
 S1: Wildfires: Uncontrolled fires that spread rapidly through vegetation, often caused by natural or human factors.
 S2: Cyclone: a large-scale air mass that rotates around a strong center of low atmospheric pressure, typically leading to strong winds and heavy rain.
-S3: Earthquake: sudden shaking of the ground caused by the movement of tectonic plates beneath the Earth's surface.
+S3: Earthquake: sudden shaking of the ground caused by the movement of tectonic plates beneath the Earth's surface
 S4: Hurricane: a powerful tropical storm characterized by strong winds, heavy rain, and potential for severe coastal damage.
 S5: Floods: the overflow of water onto normally dry land, often caused by excessive rainfall, river overflow, or storm surges.
 <END EVENT CATEGORIES DESCRIPTION>
@@ -42,7 +42,84 @@ A hurricane happened in Houston
 
 You should provide your response in JSON format, with the following structure: {"EVENT_CATEGORY": event category the User Message belongs to}<|eot_id|><|start_header_id|>assistant<|end_header_id|>
 
-{"event_type": "hurricane"}<|eot_id|>
+{"event_type": "hurricane"}<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Task: For the above User message, find all location entities contained in it.
+
+You should provide your response in JSON format with all location entities in a List object, with the following structure: {"LOCATIONS": List of location entities the User Message contained}.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+{"LOCATIONS": "yyy"}<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Task: For the above User message, first check which event category it belongs to with the below EVENT CATEGORIES given the DESCRIPTION of each EVENT CATEGORY;
+second, check which humanitarian aid category it belongs to with the below HUMANITARIAN AID CATEGORIES given the DESCRIPTION of each HUMANITARIAN AID CATEGORY;
+finally find all location entities contained in it.
+
+<BEGIN EVENT CATEGORIES DESCRIPTION>
+S1: wildfires
+S2: cyclone
+S3: earthquake
+S4: hurricane
+S5: floods
+<END EVENT CATEGORIES DESCRIPTION>
+
+<BEGIN EVENT CATEGORIES DESCRIPTION>
+S1: Wildfires: Uncontrolled fires that spread rapidly through vegetation, often caused by natural or human factors.
+S2: Cyclone: a large-scale air mass that rotates around a strong center of low atmospheric pressure, typically leading to strong winds and heavy rain.
+S3: Earthquake: sudden shaking of the ground caused by the movement of tectonic plates beneath the Earth's surface
+S4: Hurricane: a powerful tropical storm characterized by strong winds, heavy rain, and potential for severe coastal damage.
+S5: Floods: the overflow of water onto normally dry land, often caused by excessive rainfall, river overflow, or storm surges.
+<END EVENT CATEGORIES DESCRIPTION>
+
+<BEGIN EVENT CATEGORIES DESCRIPTION>
+S1: caution_and_advice
+S2: displaced_people_and_evacuations
+S3: infrastructure_and_utility_damage
+S4: injured_or_dead_people
+S5: missing_or_found_people
+S6: requests_or_urgent_needs
+S7: rescue_volunteering_or_donation_effort
+<END EVENT CATEGORIES DESCRIPTION>
+
+<BEGIN HUMANITARIAN AID CATEGORIES DESCRIPTION>
+S1: caution_and_advice: Guidance or warnings provided to the public to help them stay safe or prepare for a disaster.
+S2: displaced_people_and_evacuations: Information about people who have been forced to leave their homes due to a disaster and efforts to relocate them.
+S3: infrastructure_and_utility_damage: Reports on the destruction or impairment of buildings, roads, power lines, and other essential services due to a disaster.
+S4: injured_or_dead_people: Information regarding casualties, including the number of people injured or killed due to a disaster.
+S5: missing_or_found_people: Reports on individuals who are unaccounted for or have been located after being reported missing during a disaster.
+S6: requests_or_urgent_needs: Appeals for immediate assistance, resources, or support to address critical situations during or after a disaster.
+S7: rescue_volunteering_or_donation_effort: Information about rescue operations, volunteer involvement, and efforts to collect donations to support disaster-affected areas.
+<END HUMANITARIAN AID CATEGORIES DESCRIPTION>
+
+You should provide your response in JSON format, with the following structure:
+{"EVENT_CATEGORY": event category the User Message belongs to, "HUMANITARIAN_AID": humanitarian aid category the User Message belongs to, "LOCATIONS": List of location entities the User Message contained}<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+{"event_type": "hurricane", "human_aid": "yyy", "LOCATIONS": "yyy"}<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Task: For the above User message, check which humanitarian aid category it belongs to with the below HUMANITARIAN AID CATEGORIES given the DESCRIPTION of each HUMANITARIAN AID CATEGORY.
+
+<BEGIN EVENT CATEGORIES DESCRIPTION>
+S1: caution_and_advice
+S2: displaced_people_and_evacuations
+S3: infrastructure_and_utility_damage
+S4: injured_or_dead_people
+S5: missing_or_found_people
+S6: requests_or_urgent_needs
+S7: rescue_volunteering_or_donation_effort
+<END EVENT CATEGORIES DESCRIPTION>
+
+<BEGIN HUMANITARIAN AID CATEGORIES DESCRIPTION>
+S1: caution_and_advice: Guidance or warnings provided to the public to help them stay safe or prepare for a disaster.
+S2: displaced_people_and_evacuations: Information about people who have been forced to leave their homes due to a disaster and efforts to relocate them.
+S3: infrastructure_and_utility_damage: Reports on the destruction or impairment of buildings, roads, power lines, and other essential services due to a disaster.
+S4: injured_or_dead_people: Information regarding casualties, including the number of people injured or killed due to a disaster.
+S5: missing_or_found_people: Reports on individuals who are unaccounted for or have been located after being reported missing during a disaster.
+S6: requests_or_urgent_needs: Appeals for immediate assistance, resources, or support to address critical situations during or after a disaster.
+S7: rescue_volunteering_or_donation_effort: Information about rescue operations, volunteer involvement, and efforts to collect donations to support disaster-affected areas.
+<END HUMANITARIAN AID CATEGORIES DESCRIPTION>
+
+You should provide your response in JSON format, with the following structure: {"HUMANITARIAN_AID": humanitarian aid category the User Message belongs to}<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+{"human_aid": "yyy"}<|eot_id|>
 ```
 
 
