@@ -123,7 +123,7 @@ Please refer to /code/configs for configuration details of the training hyperpar
 # Inference 
 For inference, please refer to /code/inference.py
 # Instruction
-You can use run_deepspeed.sh for training 
+You can use run_deepspeed.sh for training.
 # Citation
 If you find this repository helpful, please consider citing:
 @article{yin2024crisissense,
