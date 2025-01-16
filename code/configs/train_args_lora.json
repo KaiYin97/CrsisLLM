@@ -1,0 +1,37 @@
+{
+    "output_dir": "./output/",
+    "model_name_or_path": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+    "cache_dir": "./model/",
+    "deepspeed": "./code/SFT/ds_z3_config.json",
+    "train_data_path": "./data/train_data/dialog.json",
+    
+    "train_mode": "lora",
+    "num_train_epochs": 2,
+    "per_device_train_batch_size": 1,
+    "gradient_accumulation_steps": 1,
+    "learning_rate": 1e-5,
+    "max_seq_length": 1024,
+    "logging_steps": 1,
+    "save_steps": 100,
+    "lr_scheduler_type": "cosine",
+
+    "gradient_checkpointing": false,
+    "disable_tqdm": false,
+    "optim": "adamw_hf",
+    "seed": 42,
+    "bf16": true,
+    "report_to": "tensorboard",
+    "dataloader_num_workers": 0,
+    "save_strategy": "steps",
+    "weight_decay": 0,
+    "max_grad_norm": 1.0,
+    "remove_unused_columns": false,
+
+    "lora_r": 64,
+    "lora_alpha": 128,
+    "lora_dropout": 0.5,
+    
+    "loss_name": "lora_64-128"
+}
+
+
