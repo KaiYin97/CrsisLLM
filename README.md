@@ -82,7 +82,7 @@ If you find this repository helpful, please kindly consider citing the correspon
 ```bibtex
 @article{yin2024crisissense,
     title={Crisissense-LLM: Instruction Fine-tuned Large Language Model for Multi-label Social Media Text Classification in Disaster Informatics},
-    author={Yin, Kai and Liu, Chang and Mostafavi, Amir and Hu, Xiao},
+    author={Yin, Kai and Liu, Chengkai and Mostafavi, Ali and Hu, Xia},
     journal={arXiv preprint arXiv:2406.15477},
     year={2024}
 }
