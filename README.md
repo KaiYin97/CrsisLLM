@@ -77,7 +77,7 @@ You can use run_deepspeed.sh for training.
 
 ## Citation
 
-If you find this repository helpful, please kindly consider citing the corresponding paper. Thanks!
+If you find this repository helpful, please kindly consider citing the corresponding paper as shown below. Thanks!
 
 ```bibtex
 @article{yin2024crisissense,
