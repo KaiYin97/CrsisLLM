@@ -1,7 +1,6 @@
 ## CrsisLLM
 source code for fine-tuing LLama 3.1 for multi-task social media txt processing for Disaster Management. Instruction fine-tuned large language model for multi-label social media text classification in disaster informatics
 
-damage assessment t o test ssssss 
 ## Introduction 
 This work is conducted based on our previous work [CrisisSense-LLM: Instruction Fine-Tuned Large Language Model for Multi-label Social Media Text Classification in Disaster Informatics](https://arxiv.org/abs/2406.15477). For this work, I fine-tuned LLama 3.1-8B for multi-label text classification and NER for location identification of open-accessible disaster-related Twitter dataset. The fine-tuning is conducted through multi-turn Supervised-Fine-Tuning with each turn dealing with one specific task (event category classification, or humanitarian aid category classification, or location entities recognization). 
 ## Prompt design
